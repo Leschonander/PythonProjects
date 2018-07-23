@@ -1,0 +1,17 @@
+body {
+    background-color: #faf4e8;
+}
+
+article {
+    background-color: #f6f9fc;
+}
+
+form {
+    text-align: center;
+    vertical-align: middle;
+}
+
+forms input {
+    width: 100px;
+    height: 50px;
+}

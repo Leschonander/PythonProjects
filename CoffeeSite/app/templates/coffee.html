@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='default.css') }}"> <!-- SERVE STATIC LIKE THIS -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='list.css') }}">
+    </head>
+    <body>
+        <header id="nav"><h1><a href="/about">About</a> &nbsp <a href="/coffee"> {{ title }} </a> &nbsp <a href="/suggestions">Suggestions</a> </h1> </header>
+            <div id='query'>
+                <h1 id='starter'><span>D.C's ☕☕☕</span></h1>
+                    <div id="container">
+                        <!-- Template for the shops -->
+                        {% for shop in shops %} 
+                        <div id='shop'>
+                            <img id="img" src= {{ shop.image }} />
+                            <div id='info'>
+                                <p> {{ shop.name }} </p>
+                                <p> {{ shop.location }} </p>
+                                <p> {{ shop.cost }} </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+            </div>
+        {% extends "footer.html" %}
+    </body>
+</html>

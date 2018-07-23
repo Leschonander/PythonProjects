@@ -1,0 +1,14 @@
+<Dear Lars 
+
+{{ form.firstName.data }} {{ form.lastName.data }} sent a suggestion! 
+    at {{ form.email.data }}
+
+
+
+    The find was at:
+    {{ form.find.data }}
+
+
+
+    They can be found at...
+    {{ form.socialMed.data }}

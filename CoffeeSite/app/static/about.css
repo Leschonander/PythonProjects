@@ -1,0 +1,19 @@
+body {
+    background-color: #faf4e8;
+}
+
+.content {
+    background-color: #f6f9fc
+}
+
+#introTitle {
+    color: coral;
+    text-align: center;
+}
+
+#spiel {
+    text-align: center;
+    font-size: 18px; 
+    padding-left: 30px;
+    padding-right: 30px;
+}
