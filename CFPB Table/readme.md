@@ -6,3 +6,7 @@ df.to_html
 ```
 Useful tool when displaying data...
 
+Link below to part of the table as an example. 
+
+[My image](https://imgur.com/a/8mppKkg)
+
