@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    </head>
+<body>
+    <p>
+        A display of the over {{ complaintAmount }} complaints from the Consumer Complaint Database.
+        Just a simple project to create a visual of part of the dataset. 
+    </p>
+    <div>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+</body>
+</html>
