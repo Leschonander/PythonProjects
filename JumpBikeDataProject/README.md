@@ -11,4 +11,4 @@ Learned how to do the following:
 4. `{{ data|safe }}` is required for transfering GeoJSON data from Flask backend to frontend to be used by Mapbox. 
 
 
-[My image](https://pbs.twimg.com/media/Di-rdnjXoAUw0k8.jpg)
+[Image](https://pbs.twimg.com/media/Di-rdnjXoAUw0k8.jpg)
