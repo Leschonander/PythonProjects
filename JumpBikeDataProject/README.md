@@ -9,6 +9,7 @@ Learned how to do the following:
 2. Got to do some more work in GeoJSON
 3. Work with Mapbox, but do most of the gruntwork in Pandas on the server side. Nice fact is that this makes it easy to hide keys from the client.
 4. `{{ data|safe }}` is required for transfering GeoJSON data from Flask backend to frontend to be used by Mapbox. 
+5. Bokeh is a nice way to embed charts into Flask projects.
 
 
 [Image](https://pbs.twimg.com/media/Di-rdnjXoAUw0k8.jpg)
