@@ -4,6 +4,8 @@
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css" rel="stylesheet">
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css" rel="stylesheet">
     </head>
 <body>
     <header>
@@ -27,6 +29,12 @@
         {% for table in chargeTable %}
             {{ table|safe }}
         {% endfor %}
+        <h3>Chart</h3>
+            {{ the_div|safe }}
+                <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+                <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+            {{ the_script|safe }}
+    </div>
     </div>
     &nbsp
     <div id="map"></div>
