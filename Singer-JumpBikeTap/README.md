@@ -23,4 +23,4 @@ While a nice start, need to work on the following things:
 2. Better format for the CSV file.
 3. Erm, understand the point of a data tap 🤔🤔🤔
 
-Other then that, for other transit + data obessed people, go nuts 🙌 .
+Other then that, for other transit + data obsessed people, go nuts 🙌 .
