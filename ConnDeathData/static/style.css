@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #333333;
+    background-color: #f6f9fc;
+    margin: 0 10% 15% 10%; /*top, right, bottom, left */
+}
+
+header h1 {
+    text-align: center;
+}
+
+table.dataframe, .dataframe th, .dataframe td {
+    border: 1px solid #e3e9f2;
+    border-bottom: 1px solid #e3e9f2;
+    border-collapse: collapse;
+    text-align:left;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+
+#containerB {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+
+#mapid { 
+    height: 400px; 
+    width: 400px;
+    margin: 0 auto;
+    padding: 5 5 5 5;
+}
+
+#container p {
+    font-weight: bold;
+}
+
+#containerB p {
+    font-weight: bold;
+}
+
+

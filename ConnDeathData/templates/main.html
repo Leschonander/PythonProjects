@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    </head>
+<body>
+    <header>
+        <h1>{{ title }}<h1>
+    </header>
+        <p>Accidental Drug Deaths in Connecticut visualized. 
+            This was a depressing dataset to take a look at.</p>
+
+        <p>Before the map, here are some stats relating to average age of death along with other numbers
+            for various types of drug deaths. Its depressing considering over 1/4 of the people died of
+            Fentaynl overdoses. 
+        </p>
+        <p>
+            Here is a map of slightly over 4,000 who died because of accidental drug deaths. Just a reminder that drug 
+            are bad, and have you considered helping in efforts to stop their usage?
+        </p>
+        <div id='container'>
+            <div>
+                <p>Age of Fentanyl deaths:</p>
+                {% for table in fenTable %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+            <div>
+                <p>Age of Cocaine deaths:</p>
+                {% for table in cocTable %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+            <div>
+                <p>Age of Benzodiazepine deaths:</p>
+                {% for table in benTable %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+        </div>
+            <p>Along with data about age of death depending on what category of drug, here is the same data split by age as well: </p>
+        <div id='containerB'>
+            <div>
+                <p>Age of Male deaths:</p>
+                {% for table in memTable %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+            <div>
+                <p>Age of Female deaths:</p>
+                {% for table in femTable %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+        </div>
+        <div id="mapid"></div>
+    <script>
+    var mymap = L.map('mapid').setView([ 41.308252,-72.924161], 7);
+
+    accessToken = '{{ MAPBOX_ACCESS_KEY }}';
+
+    L.tileLayer(`https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=${accessToken}`, {
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'your.mapbox.access.token'
+    }).addTo(mymap);
+
+    var geojsonLayer = new L.GeoJSON.AJAX("{{ url_for('static',filename='map.geojson') }}");       
+    geojsonLayer.addTo(mymap);
+    </script>
+</body>
+</html>
