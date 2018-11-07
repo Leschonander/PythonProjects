@@ -29,12 +29,12 @@
         {% for table in chargeTable %}
             {{ table|safe }}
         {% endfor %}
+
         <h3>Chart</h3>
-            {{ the_div|safe }}
-                <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
-                <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
-            {{ the_script|safe }}
-    </div>
+        {{ the_div|safe }}
+            <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+            <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+        {{ the_script|safe }}
     </div>
     &nbsp
     <div id="map"></div>
@@ -49,8 +49,9 @@
         {% endfor %}
     </div>
     <script>
-        cords = '{{ bikeLocations|safe }}'
+        cords = '{{ locations|safe }}'
         cordJ = JSON.parse(cords)
+                
     mapboxgl.accessToken = '{{ MAPBOX_ACCESS_KEY }}'
     let map = new mapboxgl.Map({
         container: 'map',
@@ -59,37 +60,11 @@
         zoom: 10
     
     });
-    var geojson = {
-    type: 'FeatureCollection',
-    features: [{
-        type: 'Feature',
-        geometry: {
-         type: 'Point',
-         coordinates: [-77.02004666666667,  38.90080666666667]
-    },
-        properties: {
-            title: 'JumpBikeOne',
-            description: 'Cordinates for Jump Bike one'
-    }
-    },
-    {
-        type: 'Feature',
-        geometry: {
-         type: 'Point',
-         coordinates: [-77.06032333333333, 38.920471666666664]
-    },
-        properties: {
-            title: 'JumpBikeTwo',
-            description: 'Cordinates for Jump Bike two'
-        }
-    }]
-    };
 
-
-    cordJ.features.forEach(function(marker) {
-        var el = document.createElement('div');
+    cordJ.features.forEach((marker) => {
+        let el = document.createElement('div');
         el.className = 'marker';
-
+        // cordJ.features.forEach((marker) => console.log(marker[0].geometry))
         new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
