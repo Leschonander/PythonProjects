@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from data import bikes, chargeCount, chargeDesc
 import pandas as pd
-from features import bikeLocations #the features data...
+from features import locations
 from bokeh.plotting import figure
 from bokeh.embed import components
 #Insert data here
@@ -40,7 +40,7 @@ def mapboxBike():
         'map.html',
         title = title,
         MAPBOX_ACCESS_KEY = MAPBOX_ACCESS_KEY,
-        bikeLocations = bikeLocations,
+        locations = locations, 
         tables = [bikes.to_html(classes='dataset1')],
         chargeTable = [chargeCount.to_html(classes='dataset2')],
         CdescribeTable = [chargeDesc.to_html(classes='dataset3')],
