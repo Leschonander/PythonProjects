@@ -1,4 +1,4 @@
-# Wine
+# ML Practice
 
 Some data science exercises mainly based on a wine data set. Practicing the usual data science workflow by looking for the most useful data and employing various machine learning techniques.
 
